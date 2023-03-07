@@ -32,11 +32,15 @@ const fetch2 = async (URL) => {
     const $ = cheerio.load(axiosResponse.data);
     const slok = $('#originalVerse').html();
     const meaning = $('#commentary').html();
+    const translation = $('#translation').html();
+    const audio = $('#verseAudio').find('audio').attr('src');
     const title = $('.chapterTitle').text().split('.')[1];
     data.chapterNo = chapter,
-    data.chapterName = title?title.trim():'title',
     data.slokNo = slok_num,
+    data.chapterName = title?title.trim():'title',
     data.slok = slok?slok.trim():'sloka',
+    data.audio = 'https://www.holy-bhagavad-gita.org'+audio,
+    data.translation = translation?translation.trim():'translation'
     data.commentry = meaning?meaning.trim():'commentry'
 }
 
