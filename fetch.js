@@ -31,7 +31,7 @@ const fetch2 = async (URL) => {
     })
     const $ = cheerio.load(axiosResponse.data);
     const slok = $('#originalVerse').html();
-    const meaning = $('#commentary').text();
+    const meaning = $('#commentary').html();
     const title = $('.chapterTitle').text().split('.')[1];
     data.chapterNo = chapter,
     data.chapterName = title?title.trim():'title',
