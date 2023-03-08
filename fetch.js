@@ -40,6 +40,7 @@ const fetch2 = async (URL) => {
     data.chapterName = title?title.trim():'title',
     data.slok = slok?slok.trim():'sloka',
     data.audio = 'https://www.holy-bhagavad-gita.org'+audio,
+    data.pageurl = URL
     data.translation = translation?translation.trim():'translation'
     data.commentry = meaning?meaning.trim():'commentry'
 }
